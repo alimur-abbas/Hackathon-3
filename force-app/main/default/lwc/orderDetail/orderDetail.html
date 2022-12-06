@@ -1,0 +1,14 @@
+<template>
+   
+          <lightning-card title="Order Detail">
+        <p> Number of order ={len}</p>
+        <ol class="slds-list_ordered">
+        <template for:each={record} for:item="order" >
+            
+               <li key={order.id}>{order.Dishes__c}</li>
+           
+            </template> 
+        </ol>
+        </lightning-card>
+     
+</template>

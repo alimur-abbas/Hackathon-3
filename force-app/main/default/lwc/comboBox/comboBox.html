@@ -1,0 +1,18 @@
+<template>
+    <lightning-combobox
+            name="progress"
+            label="Status"
+            placeholder="Select Progress"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+            <template if:true={view}>
+                <div class="slds-p-top_medium">
+            <lightning-datatable key-field="Id" data={data} columns={columns} hide-checkbox-column="true"
+         >
+
+            </lightning-datatable>
+        </div>
+            </template> 
+       
+    
+</template>

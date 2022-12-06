@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes, force:hasRecordId">
+    <aura:attribute name="isdisable" type="boolean"  default='false'/>
+    <aura:attribute name="order" type="Order__c" />
+    <aura:attribute name="recordId" type="Id" />
+    <lightning:recordEditForm aura:id="form" recordId="{!v.recordId}" objectApiName="Order__c" onsuccess="{!c.handleSuccess}">
+        <lightning:messages />
+        <lightning:inputField fieldName="Resturant__c" />
+        <lightning:inputField aura:id="customer" fieldName="Customer__c" />
+        <lightning:inputField fieldName="Category__c" />
+        <lightning:inputField fieldName="Dishes__c" />
+        <aura:if isTrue="{!v.isdisable}">
+            <lightning:inputField fieldName="Food_Rating__c"  />
+            <lightning:inputField fieldName="Delivery_Patner_Rating__c"  />
+           
+        </aura:if>
+       
+        <lightning:inputField fieldName="Status__c" onchange="{!c.handleChange}"   />
+        <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+    </lightning:recordEditForm>
+
+</aura:component>	
